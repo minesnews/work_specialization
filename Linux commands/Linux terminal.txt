@@ -230,3 +230,72 @@ root@db-VirtualBox:/home/db# systemctl status mysql
 Sep 14 14:07:03 db-VirtualBox systemd[1]: Starting mysql.service - MySQL Community Server...
 Sep 14 14:07:04 db-VirtualBox systemd[1]: Started mysql.service - MySQL Community Server.
 root@db-VirtualBox:/home/db#
+
+4 задание:
+
+Скачиваем файл deb linux-firmware для Linux Ubuntu
+
+db@db-VirtualBox:~$ wget http://archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+--2024-09-14 15:37:45--  http://archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+Resolving archive.ubuntu.com (archive.ubuntu.com)... 91.189.91.81, 91.189.91.82, 185.125.190.81, ...
+Connecting to archive.ubuntu.com (archive.ubuntu.com)|91.189.91.81|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 483396298 (461M) [application/vnd.debian.binary-package]
+Saving to: ‘linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb’
+
+linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb            100%[==================================================================================================================================================================>] 461.00M  16.4MB/s    in 30s
+
+2024-09-14 15:38:15 (15.5 MB/s) - ‘linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb’ saved [483396298/483396298]
+
+Переходим в root режим
+db@db-VirtualBox:~$ sudo su
+[sudo] password for db:
+
+root@db-VirtualBox:/home/db# dpkg - i linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+dpkg: error: need an action option
+
+Type dpkg --help for help about installing and deinstalling packages [*];
+Use 'apt' or 'aptitude' for user-friendly package management;
+Type dpkg -Dhelp for a list of dpkg debug flag values;
+Type dpkg --force-help for a list of forcing options;
+Type dpkg-deb --help for help about manipulating *.deb files;
+
+Options marked [*] produce a lot of output - pipe it through 'less' or 'more' !
+
+Устанавливаем deb пакет linux-firmware
+root@db-VirtualBox:/home/db# dpkg -i linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+(Reading database ... 199365 files and directories currently installed.)
+Preparing to unpack linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb ...
+Unpacking linux-firmware (20240318.git3b128b60-0ubuntu2.3) over (20240318.git3b128b60-0ubuntu2.1) ...
+Setting up linux-firmware (20240318.git3b128b60-0ubuntu2.3) ...
+Processing triggers for initramfs-tools (0.142ubuntu25) ...
+update-initramfs: Generating /boot/initrd.img-6.8.0-41-generic
+root@db-VirtualBox:/home/db# sudo dpkg -r linux-firmware_2024031
+dpkg: warning: ignoring request to remove linux-firmware_2024031 which isn't installed
+root@db-VirtualBox:/home/db# sudo dpkg -r linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64
+dpkg: warning: ignoring request to remove linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64 which isn't installed
+
+Удаляем deb пакет linux-firmware
+root@db-VirtualBox:/home/db# dpkg -r linux-firmware
+dpkg: dependency problems prevent removal of linux-firmware:
+ linux-image-generic-hwe-24.04 depends on linux-firmware.
+
+dpkg: error processing package linux-firmware (--remove):
+ dependency problems - not removing
+Errors were encountered while processing:
+ linux-firmware
+root@db-VirtualBox:/home/db# get-update
+get-update: command not found
+root@db-VirtualBox:/home/db# apt-get update
+Hit:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:3 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:5 http://repo.mysql.com/apt/ubuntu noble InRelease
+Hit:6 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:7 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease
+Hit:8 https://download.virtualbox.org/virtualbox/debian jammy InRelease
+Fetched 126 kB in 2s (60.0 kB/s)
+Reading package lists... Done
+W: https://ppa.launchpadcontent.net/ondrej/php/ubuntu/dists/noble/InRelease: Signature by key 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C uses weak algorithm (rsa1024)
+root@db-VirtualBox:/home/db#

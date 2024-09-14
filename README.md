@@ -127,5 +127,65 @@ db@db-VirtualBox:~/controlwork$ ls
 
 Решение задания:
 
-* 
+* Скачиваем файл deb linux-firmware для Linux Ubuntu
+
+  db@db-VirtualBox:~$ wget http://archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+
+* Переходим в root режим
+
+  db@db-VirtualBox:~$ sudo su
+
+* Устанавливаем deb пакет linux-firmware
+
+  root@db-VirtualBox:/home/db# dpkg -i linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+
+* Удаляем deb пакет linux-firmware
+
+  root@db-VirtualBox:/home/db# dpkg -r linux-firmware
+
+5. Выложить историю команд в терминале ubuntu
+
+* Выводим историю программ через команду history
+
+root@db-VirtualBox:/home/db# history
+
+  208  ls
+
+  209  cd .
+
+  210  cd
+
+  211  ls
+
+  212  exit
+
+  213  ls
+
+  214  dpkg -i mysql-apt-config_0.8.32-1_all.deb
+
+  215  sudo apt-get update
+
+  216  sudo apt-get install mysql-server
+
+  217  systemctl status mysql
+
+  218  sudo apt-get install mysql-server
+
+  219  systemctl status mysql
+
+  220  dpkg - i linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+
+  221  dpkg -i linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64.deb
+
+  222  sudo dpkg -r linux-firmware_2024031
+  
+  223  sudo dpkg -r linux-firmware_20240318.git3b128b60-0ubuntu2.3_amd64
+
+  224  sudo dpkg -r linux-firmware
+
+  225  get-update
+
+  226  apt-get update
+  
+  227  history
 
