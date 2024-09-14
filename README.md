@@ -70,7 +70,8 @@
 
 * Просматриваем файлы в рабочей директории
 db@db-VirtualBox:~/controlwork$ ls
-'Animals directory'  'Pack animals'   Pets
+
+  'Animals directory'  'Pack animals'   Pets
 
 * Переходим в директорию Animals directory
 
@@ -79,6 +80,7 @@ db@db-VirtualBox:~/controlwork$ ls
 * Просматриваем все файлы в Animals directory
 
   db@db-VirtualBox:~/controlwork/Animals directory$ ls
-'Human friends'
+
+  'Human friends'
 
 
