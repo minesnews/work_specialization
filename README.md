@@ -83,4 +83,39 @@ db@db-VirtualBox:~/controlwork$ ls
 
   'Human friends'
 
+3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
+из этого репозитория.
+
+* Скачиваем файл deb MySQL для Linux Ubuntu
+
+  db@db-VirtualBox:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+
+* Переходим в root режим
+
+  db@db-VirtualBox:~$ sudo su
+
+* Устанавливаем deb пакет mysql
+
+  root@db-VirtualBox:/home/db# dpkg -i mysql-apt-config_0.8.32-1_all.deb
+
+* Обновляем информацию о пакетах
+
+  root@db-VirtualBox:/home/db# sudo apt-get update
+
+  (Get:9 http://repo.mysql.com/apt/ubuntu noble/mysql-8.0 Sources [961 B]
+  
+  Get:10 http://repo.mysql.com/apt/ubuntu noble/mysql-8.0 amd64 Packages [12.7 kB]
+  )
+
+* Устанавливаем MySQL сервер
+  
+  root@db-VirtualBox:/home/db# apt-get install mysql-server
+
+* Проверяем статус MySQL сервера
+
+  root@db-VirtualBox:/home/db# systemctl status mysql  
+  
+  Sep 14 14:07:03 db-VirtualBox systemd[1]: Starting mysql.service - MySQL Community Server...
+  
+  Sep 14 14:07:04 db-VirtualBox systemd[1]: Started mysql.service - MySQL Community Server.
 

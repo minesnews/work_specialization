@@ -62,3 +62,171 @@ db@db-VirtualBox:~/controlwork$ cd 'Animals directory'
 db@db-VirtualBox:~/controlwork/Animals directory$ ls
 'Human friends'
 db@db-VirtualBox:~/controlwork/Animals directory$
+
+3 задание:
+
+Скачиваем файл deb MySQL для Linux Ubuntu
+db@db-VirtualBox:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+--2024-09-14 13:58:52--  https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+Resolving dev.mysql.com (dev.mysql.com)... 88.221.98.102, 2001:2030:21:19e::2e31, 2001:2030:21:1a9::2e31
+Connecting to dev.mysql.com (dev.mysql.com)|88.221.98.102|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://repo.mysql.com//mysql-apt-config_0.8.32-1_all.deb [following]
+--2024-09-14 13:58:53--  https://repo.mysql.com//mysql-apt-config_0.8.32-1_all.deb
+Resolving repo.mysql.com (repo.mysql.com)... 23.46.121.197, 2a02:26f0:9500:10a6::1d68, 2a02:26f0:9500:10b6::1d68
+Connecting to repo.mysql.com (repo.mysql.com)|23.46.121.197|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18068 (18K) [application/x-debian-package]
+Saving to: ‘mysql-apt-config_0.8.32-1_all.deb.1’
+
+mysql-apt-config_0.8.32-1_all.deb.1                                 100%[==================================================================================================================================================================>]  17.64K  --.-KB/s    in 0.004s
+
+2024-09-14 13:58:53 (4.80 MB/s) - ‘mysql-apt-config_0.8.32-1_all.deb.1’ saved [18068/18068]
+
+db@db-VirtualBox:~$ cd Загрузки
+-bash: cd: Загрузки: No such file or directory
+db@db-VirtualBox:~$ ls
+2            Desktop             Dockerfile  home_conteinerization  homew1      hwd     in_abs   Music                                Pictures      snap       test      testfolder  testnew      Videos
+app.py       dev.yml             Documents   homedir                HomeWork02  hwdir   lab.env  mysql-apt-config_0.8.32-1_all.deb    Public        task       test2     testln      test_umask   virtualbox-7.0_7.0.20-163906~Ubuntu~jammy_amd64.deb
+controlwork  docker-compose.yml  Downloads   hometome               hwcs        hwdir2  lab.yml  mysql-apt-config_0.8.32-1_all.deb.1  random_name2  Templates  testcron  test_lns    test_umask2
+db@db-VirtualBox:~$ cd Downloads
+db@db-VirtualBox:~/Downloads$ sudo su
+[sudo] password for db:
+root@db-VirtualBox:/home/db/Downloads# dpkg -i mysql-apt-config_0.8.32-1_all.deb
+dpkg: error: cannot access archive 'mysql-apt-config_0.8.32-1_all.deb': No such file or directory
+root@db-VirtualBox:/home/db/Downloads# ls
+root@db-VirtualBox:/home/db/Downloads# cd .
+root@db-VirtualBox:/home/db/Downloads# cd
+root@db-VirtualBox:~# ls
+snap
+root@db-VirtualBox:~# exit
+exit
+db@db-VirtualBox:~/Downloads$ ls
+db@db-VirtualBox:~/Downloads$ cd
+db@db-VirtualBox:~$ ls
+2            Desktop             Dockerfile  home_conteinerization  homew1      hwd     in_abs   Music                                Pictures      snap       test      testfolder  testnew      Videos
+app.py       dev.yml             Documents   homedir                HomeWork02  hwdir   lab.env  mysql-apt-config_0.8.32-1_all.deb    Public        task       test2     testln      test_umask   virtualbox-7.0_7.0.20-163906~Ubuntu~jammy_amd64.deb
+controlwork  docker-compose.yml  Downloads   hometome               hwcs        hwdir2  lab.yml  mysql-apt-config_0.8.32-1_all.deb.1  random_name2  Templates  testcron  test_lns    test_umask2
+
+Переходим в root режим
+db@db-VirtualBox:~$ sudo su
+root@db-VirtualBox:/home/db# ls
+2            Desktop             Dockerfile  home_conteinerization  homew1      hwd     in_abs   Music                                Pictures      snap       test      testfolder  testnew      Videos
+app.py       dev.yml             Documents   homedir                HomeWork02  hwdir   lab.env  mysql-apt-config_0.8.32-1_all.deb    Public        task       test2     testln      test_umask   virtualbox-7.0_7.0.20-163906~Ubuntu~jammy_amd64.deb
+controlwork  docker-compose.yml  Downloads   hometome               hwcs        hwdir2  lab.yml  mysql-apt-config_0.8.32-1_all.deb.1  random_name2  Templates  testcron  test_lns    test_umask2
+
+Устанавливаем deb пакет mysql
+root@db-VirtualBox:/home/db# dpkg -i mysql-apt-config_0.8.32-1_all.deb
+Selecting previously unselected package mysql-apt-config.
+(Reading database ... 199335 files and directories currently installed.)
+Preparing to unpack mysql-apt-config_0.8.32-1_all.deb ...
+Unpacking mysql-apt-config (0.8.32-1) ...
+Setting up mysql-apt-config (0.8.32-1) ...
+
+Обновляем информацию о пакетах
+root@db-VirtualBox:/home/db# sudo apt-get update
+Hit:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:3 http://repo.mysql.com/apt/ubuntu noble InRelease [22.7 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 https://download.docker.com/linux/ubuntu noble InRelease [48.8 kB]
+Get:7 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble InRelease [24.4 kB]
+Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [502 kB]
+Get:9 http://repo.mysql.com/apt/ubuntu noble/mysql-8.0 Sources [961 B]
+Get:10 http://repo.mysql.com/apt/ubuntu noble/mysql-8.0 amd64 Packages [12.7 kB]
+Get:11 http://ru.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [123 kB]
+Get:12 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [8,264 B]
+Get:13 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [317 kB]
+Get:14 https://download.docker.com/linux/ubuntu noble/stable amd64 Packages [13.8 kB]
+Get:15 https://download.virtualbox.org/virtualbox/debian jammy InRelease [4,431 B]
+Get:16 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [61.5 kB]
+Get:17 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [366 kB]
+Get:18 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [150 kB]
+Get:19 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [14.3 kB]
+Get:20 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [10.6 kB]
+Get:21 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [10.8 kB]
+Get:22 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1,104 B]
+Get:23 http://repo.mysql.com/apt/ubuntu noble/mysql-tools amd64 Packages [4,161 B]
+Get:24 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages [119 kB]
+Get:25 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [351 kB]
+Get:26 https://download.virtualbox.org/virtualbox/debian jammy/contrib amd64 Packages [1,958 B]
+Get:27 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main Translation-en [37.3 kB]
+Get:28 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [77.3 kB]
+Get:29 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [4,416 B]
+Get:30 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [317 kB]
+Get:31 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [61.5 kB]
+Get:32 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [428 B]
+Get:33 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [267 kB]
+Get:34 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [111 kB]
+Get:35 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [10.1 kB]
+Get:36 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [10.9 kB]
+Get:37 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [344 B]
+Fetched 3,443 kB in 3s (1,014 kB/s)
+Reading package lists... Done
+W: https://ppa.launchpadcontent.net/ondrej/php/ubuntu/dists/noble/InRelease: Signature by key 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C uses weak algorithm (rsa1024)
+
+
+root@db-VirtualBox:/home/db# sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  mysql-community-server
+The following NEW packages will be installed:
+  mysql-community-server mysql-server
+0 upgraded, 2 newly installed, 0 to remove and 212 not upgraded.
+Need to get 143 kB of archives.
+After this operation, 223 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Abort.
+root@db-VirtualBox:/home/db# systemctl status mysql
+Unit mysql.service could not be found.
+
+Устанавливаем MySQL сервер
+root@db-VirtualBox:/home/db# apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  mysql-community-server
+The following NEW packages will be installed:
+  mysql-community-server mysql-server
+0 upgraded, 2 newly installed, 0 to remove and 212 not upgraded.
+Need to get 143 kB of archives.
+After this operation, 223 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://repo.mysql.com/apt/ubuntu noble/mysql-8.0 amd64 mysql-community-server amd64 8.0.39-1ubuntu24.04 [77.6 kB]
+Get:2 http://repo.mysql.com/apt/ubuntu noble/mysql-8.0 amd64 mysql-server amd64 8.0.39-1ubuntu24.04 [65.9 kB]
+Fetched 143 kB in 1s (99.4 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mysql-community-server.
+(Reading database ... 199340 files and directories currently installed.)
+Preparing to unpack .../mysql-community-server_8.0.39-1ubuntu24.04_amd64.deb ...
+Unpacking mysql-community-server (8.0.39-1ubuntu24.04) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../mysql-server_8.0.39-1ubuntu24.04_amd64.deb ...
+Unpacking mysql-server (8.0.39-1ubuntu24.04) ...
+Setting up mysql-community-server (8.0.39-1ubuntu24.04) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql.service.
+Setting up mysql-server (8.0.39-1ubuntu24.04) ...
+
+Проверяем статус MySQL сервера
+root@db-VirtualBox:/home/db# systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2024-09-14 14:07:04 +07; 54s ago
+       Docs: man:mysqld(8)
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+   Main PID: 5773 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 4614)
+     Memory: 364.2M (peak: 378.3M)
+        CPU: 5.094s
+     CGroup: /system.slice/mysql.service
+             └─5773 /usr/sbin/mysqld
+
+Sep 14 14:07:03 db-VirtualBox systemd[1]: Starting mysql.service - MySQL Community Server...
+Sep 14 14:07:04 db-VirtualBox systemd[1]: Started mysql.service - MySQL Community Server.
+root@db-VirtualBox:/home/db#
