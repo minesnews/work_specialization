@@ -2,6 +2,8 @@
 
 Задания
 
+### Часть 1. Linux
+
 1. Используя команду cat в терминале операционной системы Linux, создать
 два файла Домашние животные (заполнив файл собаками, кошками,
 хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и
@@ -120,4 +122,10 @@ db@db-VirtualBox:~/controlwork$ ls
   Sep 14 14:07:03 db-VirtualBox systemd[1]: Starting mysql.service - MySQL Community Server...
   
   Sep 14 14:07:04 db-VirtualBox systemd[1]: Started mysql.service - MySQL Community Server.
+
+4. Установить и удалить deb-пакет с помощью dpkg.
+
+Решение задания:
+
+* 
 
