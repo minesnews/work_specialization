@@ -86,6 +86,8 @@ db@db-VirtualBox:~/controlwork$ ls
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
 из этого репозитория.
 
+Решение задания:
+
 * Скачиваем файл deb MySQL для Linux Ubuntu
 
   db@db-VirtualBox:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
