@@ -1,0 +1,64 @@
+1 задание:
+
+db@db-VirtualBox:~/controlwork$
+
+Создаем файл Pets и записываем Dogs, Cats, Hamsters
+db@db-VirtualBox:~/controlwork$ cat > Pets
+Dogs
+Cats
+Hamsters
+
+Создаем файл Pack animals и записываем Horses, Camels, Donkeys
+db@db-VirtualBox:~/controlwork$ cat > 'Pack animals'
+Horses
+Camels
+Donkeys
+
+Объединяем файлы Pets и Pack animals в единый файл Animals
+db@db-VirtualBox:~/controlwork$ cat 'Pets' 'Pack animals' > Animals
+
+Просматриваем файлы в рабочей директории
+db@db-VirtualBox:~/controlwork$ ls
+ Animals  'Pack animals'   Pets
+db@db-VirtualBox:~/controlwork$ cat > Animals
+
+Открываем в редакторе nano файл Animals и просматриваем его
+db@db-VirtualBox:~/controlwork$ nano Animals
+db@db-VirtualBox:~/controlwork$ cat Pets 'Pack animals' > Animals
+db@db-VirtualBox:~/controlwork$ ls
+ Animals  'Pack animals'   Pets
+db@db-VirtualBox:~/controlwork$ nano Animals
+db@db-VirtualBox:~/controlwork$ cat > Animals
+db@db-VirtualBox:~/controlwork$ nano Animals
+db@db-VirtualBox:~/controlwork$ cat Pets 'Pack animals' > Animals
+db@db-VirtualBox:~/controlwork$ nano Animals
+
+Переименовываем файл Animals в Human friends
+db@db-VirtualBox:~/controlwork$ db@db-VirtualBox:~/controlwork$ mv Animals 'Human friends'
+
+Просматриваем файлы в рабочей директории
+db@db-VirtualBox:~/controlwork$ ls
+'Human friends'  'Pack animals'   Pets
+
+2 задание:
+
+Создаём директорию Animals directory
+db@db-VirtualBox:~/controlwork$ mkdir 'Animals directory'
+
+db@db-VirtualBox:~/controlwork$ ls
+'Animals directory'  'Human friends'  'Pack animals'   Pets
+db@db-VirtualBox:~/controlwork$ mk 'Human friends' 'Animals directory'
+mk: command not found
+
+Переносим файл Human friends в Animals directory
+db@db-VirtualBox:~/controlwork$ mv 'Human friends' 'Animals directory'/
+db@db-VirtualBox:~/controlwork$ ls
+'Animals directory'  'Pack animals'   Pets
+
+Переходим в директорию Animals directory
+db@db-VirtualBox:~/controlwork$ cd 'Animals directory'
+
+Просматриваем все файлы в Animals directory
+db@db-VirtualBox:~/controlwork/Animals directory$ ls
+'Human friends'
+db@db-VirtualBox:~/controlwork/Animals directory$
