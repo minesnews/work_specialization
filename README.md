@@ -203,3 +203,9 @@ root@db-VirtualBox:/home/db# history
 * Рисуем схему классов с помощью сервиса https://www.drawio.com
 
   ![Схема классов](/Schemes/animals.drawio.png)
+
+### Часть 3. MYSQL
+
+7. В подключенном MySQL репозитории создать базу данных “Друзья
+человека”
+
